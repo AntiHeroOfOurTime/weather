@@ -1,0 +1,12 @@
+.container{
+    @apply flex flex-col bg-white p-[15px] border border-gray-500 rounded-[20px] w-[350px]
+}
+.header{
+    @apply flex  justify-between gap-[15px] mb-[20px]
+}
+.infoBlock{
+    @apply flex justify-between  gap-[10px]
+}
+.value {
+    @apply text-[17px] font-bold text-end
+}

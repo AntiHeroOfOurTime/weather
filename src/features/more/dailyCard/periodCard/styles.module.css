@@ -1,0 +1,9 @@
+.container{
+    @apply flex flex-col gap-[10px] mb-[20px] last:mb-[10px]
+}
+.title{
+    @apply text-center text-[20px] font-bold
+}
+.blocks{
+    @apply grid grid-cols-4 gap-[10px]
+}

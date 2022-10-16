@@ -1,0 +1,9 @@
+.container{
+    @apply bg-white w-full rounded-[15px] p-[20px] overflow-y-hidden flex flex-col cursor-pointer mb-[20px]
+}
+.sections{
+    @apply flex-col gap-[20px] hidden
+}
+.container > button{
+    @apply border border-gray-500 rounded-[10px]  font-semibold hover:shadow-2xl self-center w-[120px]
+}

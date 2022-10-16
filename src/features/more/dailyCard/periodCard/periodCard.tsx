@@ -1,6 +1,7 @@
 import React from 'react';
 import {Block} from "./block";
-import {IResponseWeather} from "../../../../interface";
+import {IResponseWeather} from "shared/interface";
+import styles from './styles.module.css'
 
 interface IProps {
         title:string;
@@ -9,9 +10,9 @@ interface IProps {
 
 export const PeriodCard = ({title, data}: IProps) => {
     return (
-        <div className={'flex flex-col gap-[10px]'}>
-            <span className={'text-center text-[20px] font-bold '}>{title}</span>
-            <div className={'grid gap-10px grid-cols-4 gap-[10px]'}>
+        <div className={styles.container}>
+            <span className={styles.title}>{title}</span>
+            <div className={styles.blocks}>
                 {data.time.map((el, index)=><Block
                     key={index}
                     weathercode={data.weathercode[index]}

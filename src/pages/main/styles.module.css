@@ -1,0 +1,25 @@
+.container{
+    @apply bg-gray-200 py-[40px] flex flex-col  px-[10px] gap-[30px] min-w-full min-h-screen
+}
+.defaultCity{
+    @apply text-center
+}
+.buttonsCity{
+    @apply w-full flex justify-around
+}
+.button,.buttonsCity *{
+   @apply  w-[300px] py-[10px] text-[25px] bg-white border border-gray-500 rounded-[15px] uppercase font-bold hover:shadow-2xl self-center
+}
+.title{
+   @apply text-[25px] text-center font-bold
+}
+.loader{
+    @apply text-[20px] text-center font-bold
+}
+.error{
+    @apply text-red-500 text-[30px] text-center font-bold
+}
+.cards{
+    @apply flex justify-around
+}
+
