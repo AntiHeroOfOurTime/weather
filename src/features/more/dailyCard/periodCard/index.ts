@@ -1,1 +1,1 @@
-export * from './periodCard'
+export * from './periodCard';

@@ -1,18 +1,18 @@
-.container{
-    @apply border border-cyan-600 rounded-[10px] text-[20px] p-[10px] mb-[20px]
+.container {
+  @apply border border-cyan-600 rounded-[10px] text-[20px] p-[10px] mb-[20px];
 }
-.title{
-    @apply text-center mb-[10px] font-bold
+.title {
+  @apply text-center mb-[10px] font-bold;
 }
-.info{
-    @apply flex justify-between
+.info {
+  @apply flex justify-between;
 }
-.icon{
-    @apply stroke-blue-600
+.icon {
+  @apply stroke-blue-600;
 }
-.infoBlock{
-    @apply flex flex-col items-center text-[15px]
+.infoBlock {
+  @apply flex flex-col items-center text-[15px];
 }
-.values{
-    @apply text-[20px] font-bold
+.values {
+  @apply text-[20px] font-bold;
 }

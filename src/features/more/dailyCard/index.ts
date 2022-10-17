@@ -1,1 +1,1 @@
-export * from './dailyCard'
+export * from './dailyCard';
