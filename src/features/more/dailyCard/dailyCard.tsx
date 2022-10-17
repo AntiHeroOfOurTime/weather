@@ -1,28 +1,24 @@
-import React, {useMemo, useState} from 'react';
-import {PeriodCard} from "./periodCard";
-import {IResponseWeather} from "shared/interface/app.interface";
-import {DayCard} from "./dayCard";
-import {calculateAverageValueInArr, chunkWeather} from "shared/utils/obj.utils";
-import styles from './styles.module.css'
+import React, { useState } from 'react';
+import { PeriodCard } from './periodCard';
+import { DayCard } from './dayCard';
+import styles from './styles.module.css';
+import { IWeatherForDay, IResponseWeather } from 'shared/interface';
 
-export const DailyCard = (data: IResponseWeather['hourly']) => {
-    const [focus,setFocus] = useState(false)
-    const memoData = useMemo(()=>chunkWeather(data,12),[data])
-    return (
-        <div className={styles.container}>
-            <DayCard
-                time={data.time[0]}
-                weathercode={Math.max.apply(null, data.weathercode)}
-                temperature_2m={calculateAverageValueInArr(data.temperature_2m)}
-                windspeed_10m={calculateAverageValueInArr(data.windspeed_10m)}
-                relativehumidity_2m = {calculateAverageValueInArr(data.relativehumidity_2m)}
-            />
-            <div className={`${styles.sections} ${focus && '!flex'}`}>
-                <PeriodCard title={'Погода в первой половине дня'} data={memoData[0]}/>
-                <PeriodCard title={'Погода во второй половине дня'} data={memoData[1]}/>
-            </div>
-            <button onClick={()=>setFocus(prevState => !prevState)}>{focus?'Закрыть':'Подробнее'}</button>
+interface IProps {
+  data: IWeatherForDay;
+  units: IResponseWeather['hourly_units'];
+}
 
-        </div>
-    );
+export const DailyCard = ({ data, units }: IProps) => {
+  const [focus, setFocus] = useState(false);
+  return (
+    <div className={styles.container}>
+      <DayCard values={data.average_weather} units={units} />
+      <div className={`${styles.sections} ${focus && '!flex'}`}>
+        <PeriodCard title={'Погода в первой половине дня'} data={data.hourly.slice(0, 12)} units={units} />
+        <PeriodCard title={'Погода во второй половине дня'} data={data.hourly.slice(12, 24)} units={units} />
+      </div>
+      <button onClick={() => setFocus((prevState) => !prevState)}>{focus ? 'Закрыть' : 'Подробнее'}</button>
+    </div>
+  );
 };

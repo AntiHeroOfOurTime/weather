@@ -1,0 +1,6 @@
+.container {
+  @apply w-full h-screen bg-black bg-opacity-10 absolute z-[100] top-0 left-0 flex justify-center align-middle;
+}
+.container > svg {
+  @apply stroke-gray-500;
+}
