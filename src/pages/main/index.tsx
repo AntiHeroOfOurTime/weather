@@ -29,5 +29,7 @@ export const MainPage = () => {
   const onClickButton = (name: string) => {
     dispatch(getWeatherMain(name));
   };
-  return <Main data={weather} city={defaultCity} error={error} isLoading={isLoading} onClickButton={onClickButton} />;
-};
+  return <>
+  <Main data={weather} city={defaultCity} error={error} isLoading={isLoading} onClickButton={onClickButton} />
+    <span>vs test</span>
+  </>};
